@@ -5,10 +5,12 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 
 public class WindowTest2 {
 
 	private JFrame frame;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -54,6 +56,10 @@ public class WindowTest2 {
 		JButton btnBefore = new JButton("before page");
 		btnBefore.setBounds(338, 82, 217, 122);
 		end.add(btnBefore);
+
+		table = new JTable();
+		table.setBounds(128, 146, 249, 208);
+		end.add(table);
 
 		JPanel start = new JPanel();
 		start.setBounds(0, 0, 593, 416);
