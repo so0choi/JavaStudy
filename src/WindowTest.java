@@ -11,7 +11,6 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -63,36 +62,18 @@ public class WindowTest {
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
 
-		JButton btnNewButton = new JButton("과목 추가");
-
-		btnNewButton.setBackground(new Color(240, 255, 240));
-		btnNewButton.setFont(new Font("AppleSDGothicNeoM00", Font.PLAIN, 17));
-		btnNewButton.setBounds(14, 66, 119, 33);
-		frame.getContentPane().add(btnNewButton);
-
 		JLabel title = new JLabel("학점 계산기");
 		title.setFont(new Font("AppleSDGothicNeoM00", Font.PLAIN, 25));
 		title.setHorizontalAlignment(SwingConstants.CENTER);
-		title.setBounds(87, 13, 199, 40);
+		title.setBounds(102, 13, 199, 40);
 		frame.getContentPane().add(title);
 
 		JButton button = new JButton("계산하기");
 
 		button.setBackground(new Color(240, 248, 255));
 		button.setFont(new Font("AppleSDGothicNeoM00", Font.PLAIN, 17));
-		button.setBounds(255, 67, 119, 33);
+		button.setBounds(255, 67, 119, 31);
 		frame.getContentPane().add(button);
-
-		JPanel resultPanel = new JPanel();
-		resultPanel.setBounds(14, 106, 360, 430);
-		frame.getContentPane().add(resultPanel);
-		resultPanel.setLayout(null);
-
-		JLabel resultLabel = new JLabel();
-		resultLabel.setFont(new Font("AppleSDGothicNeoL00", Font.PLAIN, 18));
-		resultLabel.setBounds(55, 29, 219, 183);
-		resultPanel.add(resultLabel);
-		resultPanel.setVisible(false);
 
 		JPanel container = new JPanel();
 		container.setBounds(14, 106, 360, 430);
@@ -339,57 +320,28 @@ public class WindowTest {
 
 		JLabel label_8 = new JLabel("과목 수");
 		label_8.setFont(new Font("AppleSDGothicNeoL00", Font.PLAIN, 17));
-		label_8.setBounds(137, 69, 56, 26);
+		label_8.setBounds(14, 67, 56, 26);
 		frame.getContentPane().add(label_8);
 
 		totalCount = new JTextField();
-		totalCount.setBounds(194, 72, 23, 26);
+		totalCount.setBounds(73, 67, 23, 26);
 		frame.getContentPane().add(totalCount);
 		totalCount.setColumns(5);
 
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton button_1 = new JButton("계산하기");
+		button_1.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				if (btnCount < 3) {
-					if (btnCount == 1)
-						grade6.setVisible(true);
-					else if (btnCount == 2)
-						grade7.setVisible(true);
-					else if (btnCount == 3)
-						grade8.setVisible(true);
-					btnCount++;
-				} else {
-					JOptionPane.showMessageDialog(null, "과목은 8개 까지 추가할 수 있습니다");
-				}
+			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
+		button_1.setFont(new Font("AppleSDGothicNeoM00", Font.PLAIN, 17));
+		button_1.setBackground(new Color(240, 248, 255));
+		button_1.setBounds(102, 67, 119, 31);
+		frame.getContentPane().add(button_1);
 
-		button.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-
-				if (reset == true) {
-					reset = false;
-					resultPanel.setVisible(false);
-				} else {
-					reset = true;
-					button.setText("돌아가기");
-					resultPanel.setVisible(true);
-
-					int sumAmount;
-					int total = Integer.parseInt(totalCount.getText());
-					int amount[] = new int[total];
-					for (int i = 0; i < total; i++) {
-
-					}
-
-					sumAmount = Integer.parseInt(amount1.getSelectedItem().toString());
-					resultLabel.setText("");
-
-				}
-
-			}
-		});
+		JPanel panel = new JPanel();
+		panel.setBounds(14, 67, 360, 31);
+		frame.getContentPane().add(panel);
 
 	}
 }
