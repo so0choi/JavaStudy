@@ -57,7 +57,7 @@ public class WindowTest {
 		amount = new String[] { "3", "2", "1" };
 		frame = new JFrame();
 		frame.getContentPane().setBackground(SystemColor.window);
-		frame.setBounds(100, 100, 394, 584);
+		frame.setBounds(100, 100, 394, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
@@ -76,7 +76,7 @@ public class WindowTest {
 		frame.getContentPane().add(button);
 
 		JPanel container = new JPanel();
-		container.setBounds(14, 106, 360, 430);
+		container.setBounds(14, 106, 360, 416);
 		frame.getContentPane().add(container);
 		container.setLayout(null);
 
@@ -342,6 +342,10 @@ public class WindowTest {
 		JPanel panel = new JPanel();
 		panel.setBounds(14, 67, 360, 31);
 		frame.getContentPane().add(panel);
+
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setBounds(24, 523, 324, 29);
+		frame.getContentPane().add(lblNewLabel);
 
 	}
 }
